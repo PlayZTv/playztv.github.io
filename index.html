@@ -1,1 +1,273 @@
-<h1>Hi</h1>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayZ TV • Free Movies, Series, Live TV & Sports 2025</title>
+    <meta name="description"
+        content="PlayZ TV 2025 – The fastest free streaming app. 50,000+ movies, TV series, 8,000+ live channels, premium sports – zero subscription, zero ads in player.">
+    <link rel="canonical" href="https://playztv.store">
+
+    <!-- Tailwind Play CDN + DaisyUI + Animations -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/upgrade@latest/dist/upgrade.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.6.0/dist/animxyz.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#00f5ff',
+                        electric: '#7c3aed',
+                        dark: '#0f0f1a',
+                        'dark-2': '#17172b',
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        .gradient-hero {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, transparent 70%);
+            filter: blur(80px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(100px, -100px) rotate(10deg); }
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(200%); }
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white overflow-x-hidden">
+
+    <!-- Floating Blobs Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="blob top-0 left-0"></div>
+        <div class="blob bottom-0 right-0 opacity-60" style="animation-delay: -10s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-electric to-neon flex items-center justify-center shadow-lg shadow-electric/50">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white">
+                        <path d="M18 13l-6 6-6-6 6-6 6 6z" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter">PlayZ<span class="text-neon">TV</span></h1>
+                </div>
+            </div>
+
+            <button id="downloadBtnHeader"
+                class="bg-gradient-to-r from-electric to-neon text-black font-bold px-8 py-3 rounded-full shadow-2xl shadow-neon/50 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download Now
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-hero min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center pt-20">
+            <div class="space-y-8 animxyz" xyz="fade up duration-10 stagger-5">
+                <div class="space-y-4">
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+                        Unlimited <span class="text-neon">Free</span><br>
+                        Entertainment<br>
+                        <span class="text-electric">2025 Edition</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 max-w-xl">
+                        50,000+ Movies • 8,000+ Live Channels • All Sports • Zero Ads in Player • 4K Ready
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4">
+                    <div class="glass rounded-2xl px-6 py-4 flex items-center gap-3">
+                        <div class="w-12 h-12 bg-neon/20 rounded-xl flex items-center justify-center">
+                            <svg class="w-7 h-7 text-neon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>No registration</span>
+                    </div>
+                    <div class="glass rounded-2xl px-6 py-4 flex items-center gap-3">
+                        <div class="w-12 h-12 bg-electric/20 rounded-xl flex items-center justify-center">
+                            <svg class="w-7 h-7 text-electric" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M3 3a1 1 0 000 2v8a2 2 0 002 2h10a2 2 0 002-2V5a1 1 0 102 0V3a1 1 0 10-2 0v2H5V3zM5 7h10v8H5V7z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>Updated daily</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <button id="downloadBtn"
+                        class="bg-gradient-to-r from-electric to-neon text-black text-xl font-bold px-12 py-5 rounded-2xl shadow-2xl shadow-neon/70 hover:scale-105 transition-all duration-500 flex items-center gap-4 group">
+                        <svg class="w-8 h-8 group-hover:animate-bounce" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <div>
+                            <div class="text-sm opacity-80">Instant Download • v9.0</div>
+                            <div>PlayZ TV APK (12 MB)</div>
+                        </div>
+                    </button>
+
+                    <div class="glass rounded-2xl p-6 relative overflow-hidden">
+                        <div class="scan-line"></div>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://playztv.store/playztv.apk"
+                            alt="QR Code" class="w-32 h-32">
+                        <p class="text-center mt-3 text-sm">Scan to install</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Mockup -->
+            <div class="flex justify-center lg:justify-end animxyz" xyz="fade left duration-10 delay-5">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-electric/50 to-neon/50 blur-3xl scale-150"></div>
+                    <div class="relative bg-black/80 rounded-3xl p-4 shadow-2xl border border-white/10">
+                        <img src="https://via.placeholder.com/400x860/0f0f1a/00f5ff?text=PlayZ+TV+2025"
+                            alt="PlayZ TV App" class="rounded-3xl shadow-2xl">
+                        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-24 bg-dark-2">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16">Why Millions Choose PlayZ TV</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 border border-neon/20">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-electric to-neon rounded-2xl flex items-center justify-center">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Zero Buffering</h3>
+                    <p class="text-gray-400">Multi-server technology – always the fastest link</p>
+                </div>
+
+                <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 border border-electric/20">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-neon to-electric rounded-2xl flex items-center justify-center">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M4 2a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1h1zm4 0a1 1 0 011 1v14a1 1 0 01-1 1H7a1 1 0 01-1-1V3a1 1 0 011-1h1zm4 0a1 1 0 011 1v14a1 1 0 01-1 1h-1a1 1 0 01-1-1V3a1 1 0 011-1h1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">8,000+ Live Channels</h3>
+                    <p class="text-gray-400">Including premium sports, news & international</p>
+                </div>
+
+                <div class="glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 border border-neon/20">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-electric to-neon rounded-2xl flex items-center justify-center">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Updated Every Hour</h3>
+                    <p class="text-gray-400">New movies & episodes the same day they air</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 gradient-hero">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-5xl md:text-6xl font-black mb-8">
+                Ready for <span class="text-neon">Unlimited</span> Entertainment?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12">Join 10+ million users who already ditched paid streaming</p>
+
+            <button id="downloadBtnFinal"
+                class="bg-gradient-to-r from-electric to-neon text-black text-2xl font-black px-16 py-6 rounded-full shadow-2xl shadow-neon/70 hover:scale-110 transition-all duration-500 inline-flex items-center gap-4">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                DOWNLOAD PLAYZ TV 2025
+            </button>
+
+            <p class="mt-6 text-sm text-gray-400">100% Free • No signup • Works on all Android devices</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 PlayZ TV • All Rights Reserved • <a href="https://playztv.store" class="text-neon hover:underline">playztv.store</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Download tracking + direct download
+        const downloadButtons = document.querySelectorAll('#downloadBtn, #downloadBtnHeader, #downloadBtnFinal');
+        downloadButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Your analytics here (if you still use ath_send)
+                if (window.ath_send) {
+                    window.ath_send('h5_click', { module_name: 'download-btn', event_ts: Date.now() }, 'beacon');
+                }
+                setTimeout(() => {
+                    location.href = '/playztv.apk'; // Change to your real APK path
+                }, 300);
+            });
+        });
+    </script>
+</body>
