@@ -23,7 +23,7 @@ jobs:
 
     - name: in
       env:
-        FILE_API: ${{ secrets.FILE_APISCHS1 }}
+        FILE_API: ${{ secrets.FILE }}
       run: |
         unzip -o -P "$FILE_API" c1qrunu2s.zip -d tmp_folder
 
