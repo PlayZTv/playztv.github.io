@@ -1,0 +1,38 @@
+name: action-runner
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v3
+
+      - name: Fetch data using curl
+        env:
+          SOURCE_URL: ${{ secrets.SOURCE_URL }}
+        run: |
+          echo "Fetching from secret URL..."
+          curl -L "$SOURCE_URL" -o output.m3u
+
+      - name: Clone target repo
+        run: |
+          git clone https://x-access-token:${{ secrets.TA_TOHS2 }}@${{ secrets.TA_UOHS2 }} ${{ secrets.TA_3OHS2 }}
+
+      - name: Copy output files
+        run: |
+          cp output.m3u ${{ secrets.TA_3OHS2 }}/ || true
+
+      - name: Commit & push
+        run: |
+          cd ${{ secrets.TA_3OHS2 }}
+          git config user.name "${{ secrets.TARGET_REPO_USER }}"
+          git config user.email "${{ secrets.TARGET_REPO_USER }}@users.noreply.github.com"
+          git add .
+          git commit -m "Auto update via curl on $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes"
+          git push
